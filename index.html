@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .middle{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50% , -50%);
+        }
+    </style>
+</head>
+<body class="">
+
+<img id="welcome" class="img-fluid" src="/assets/welcome.jpg" alt="">
+<img id="eve" class="img-fluid d-none" src="/assets/eve.jpg" alt="">
+<img id="hbd" class="img-fluid d-none" src="/assets/hbd.jpg" alt="">
+<div id="hbd" class="text-center text-light d-none" style="margin-top: 200px;">Happy birthday my dear friend , xode barakate bexta 3amre ta o emano xoshye brsqe ta bkat 🤍 :)</div>
+<audio src="/assets/music.mp3" class="d-none"></audio>
+<img id="cake" class="img-fluid m-3 d-none" src="/assets/cake_a.png" width="150" alt="" style="position: absolute; right: 0; top: 10px;">
+<div class="container-fluid">
+    <div class="row row-cols-auto"> 
+        <div id="middle" class="bg-light middle shadow p-3 text-center" style="border-radius: 30px;">
+            <h3 id="text" class="text-center">Hello 😊</h3>
+            <div class="mt-5"></div>
+            <button id="btnA" class="btn btn-danger">hello 👀</button>
+
+            <input class="form-check-input d-none check" type="checkbox">
+            <label class="form-check-label d-none check">👀</label><br><br>
+            <button class="btn btn-success d-none mt-1 check" onclick="check()">Submit</button>
+
+            <button class="btn btn-warning d-none mt-1 lol" onclick="lol()">Lol 🙊</button>
+
+            <button class="btn btn-primary d-none mt-1 gender" onclick="gender('male')">Male 👨</button>
+            <button class="btn btn-danger d-none mt-1 gender" onclick="gender('female')">Female 👧</button>
+
+            <button class="btn btn-success d-none mt-1 a" onclick="ready('a')">Bale</button>
+            <button class="btn btn-danger d-none mt-1 a" onclick="ready('aa')">Naxer</button>
+
+            <button class="btn btn-dark mt-1 d-none b" onclick="link('b')">A) Koraki</button>
+            <button class="btn btn-dark mt-1 d-none b" onclick="link('bb')">B) kchake</button>
+            <button class="btn btn-dark mt-1 d-none b" onclick="link('bbb')">C) Havalaki</button>
+            <button class="btn btn-dark mt-1 d-none b" onclick="link('bbbb')">D) Robotaki</button>
+
+            <button class="btn btn-dark mt-1 d-none c" onclick="num('c')">A) 11</button>
+            <button class="btn btn-dark mt-1 d-none c" onclick="num('cc')">B) 6</button>
+            <button class="btn btn-dark mt-1 d-none c" onclick="num('ccc')">C) 9</button>
+            <button class="btn btn-dark mt-1 d-none c" onclick="num('cccc')">D) 5</button>
+
+            <button class="btn btn-dark mt-1 d-none d" onclick="nine('d')">A) Nooo 😵</button>
+            <button class="btn btn-dark mt-1 d-none d" onclick="nine('dd')">B) Naxer 😒</button>
+            <button class="btn btn-dark mt-1 d-none ddd" onclick="nine('ddd')">C) Bale o weva tr 😂</button>
+
+            <button class="btn btn-dark mt-1 d-none e" onclick="sade('e')">A) 0%</button>
+            <button class="btn btn-dark mt-1 d-none e" onclick="sade('ee')">B) 25%</button>
+            <button class="btn btn-dark mt-1 d-none e" onclick="sade('eee')">C) 50%</button>
+            <button class="btn btn-dark mt-1 d-none e" onclick="sade('eeee')">D) 75%</button>
+
+            <button class="btn btn-dark mt-1 d-none f" onclick="axr('f')">Bale bezarkar bi 😏</button>
+            <button class="btn btn-dark mt-1 d-none f" onclick="axr('ff')">Naxer mn 7azhe kr 😍</button>
+
+            <button class="btn btn-light btn-lg mt-1 d-none cake" onclick="cake_a()">Cake 🎂</button>
+            <button class="btn btn-light btn-lg mt-1 d-none cake_b" onclick="cake_b()">Pf krn 😂</button>
+        </div>
+        <div id="anjam" class="bg-light shadow p-3 text-center w-100"></div>
+    </div>
+</div>
+
+    
+</body>
+<script>
+    $('#btnA').click(()=>{
+        $('#text').html('If you are not a robot 🤖 , check this input then click submit');
+        $('#btnA,#welcome').addClass('d-none');
+        $('.check').removeClass('d-none');
+    });
+
+    function check(){
+        if($('input').is(':checked')){
+            $('#text').html('<h5>I know you are human , <br> but your name is ( Eva robot ) 😁</h5>');
+            $('.lol,#eve').removeClass('d-none');
+        }else{
+            $('#text').html('<h5>OMG , You are real robot 🤖 , Good bye :)</h5>');
+        }
+        $('.check').addClass('d-none');
+    }
+
+    function lol(){
+        $('#text').html('<h5>Your Gender ?</h5>');
+        $('.lol').addClass('d-none');
+        $('.gender').removeClass('d-none');
+    }
+
+    function gender(varo){
+        if(varo == 'female'){
+            $('#text').html('Xerhati ( Eve - SmSm) , <br> De hndak psyara lta kayn , r u ready ?');
+            $('.a').removeClass('d-none');
+        }else{
+            $('#text').html('Only the female race can get in 😁');
+        }
+        $('.gender,#eve').addClass('d-none');
+    }
+
+    function ready(a){
+        if(a == 'a'){
+            $('#text').html('Breka kish avel xare , to daxli vi linki bi ?');
+            $('.b').removeClass('d-none');
+        }else{
+            $('#text').html('Xerbchi😏');
+        }
+        $('.a').addClass('d-none');
+    }
+
+    function time(message){
+        var sec = 10;
+        var stop = setInterval(()=>{
+            if(sec == 1){
+                clearInterval(stop);
+            }
+            $('#anjam').html(message+' <h5>( '+sec+' )</h5>');
+            --sec;
+        },1000);
+    }
+
+    function link(varo){
+        if(varo == 'bbbb'){
+            time('<h5>Na na 3afya ta zani 👽</h5>');
+            $('#anjam').html('<h5>Na na 3afya ta zani 👽</h5>');
+            setTimeout(()=>{
+                $('#text').html('Kish raqam afzal tra lnk xaledi ?');
+                $('.c').removeClass('d-none');
+                $('#anjam').html('');
+            },10500);
+        }else{
+            $('#anjam').html('Barsva ta xalata , xaled nk ta robota robot 🤖').addClass('text-danger');
+        }
+        $('.b').addClass('d-none');
+    }
+
+    function num(varo){
+        if(varo == 'ccc'){
+            time('<h5>3afya ta zani 👽</h5>');
+            $('#anjam').html('<h5>3afya ta zani 👽</h5>');
+            setTimeout(()=>{
+                $('#text').html('ta dvet bzani boch ( 9 ) ?');
+                $('.d').removeClass('d-none');
+                $('#anjam').html('');
+            },10500);
+        }else{
+            $('#anjam').html('Barsva ta xalata , Dobara hawl bda 🤖').addClass('text-danger');
+        }
+        $('.c').addClass('d-none');
+    }
+
+    function nine(varo){
+        if(varo == 'd' || varo == 'dd'){
+            $('.d').addClass('d-none');
+            $('.ddd').removeClass('d-none');
+        }else if(varo == 'ddd'){
+            time('<h2>Chonka dwe rozhe da , kchaka saxif ya nasi 😂</h2>');
+            $('#anjam').html('<h2>Chonka dwe rozhe da , kchaka saxif ya nasi 😂</h2>');
+            setTimeout(()=>{
+                $('#text').html('Chandl sade you hate xaled ?');
+                $('.e').removeClass('d-none');
+                $('.ddd').addClass('d-none');
+                $('#anjam').html('');
+            },10500);
+        }
+    }
+
+    function sade(varo){
+        if(varo == 'e'){
+            time('<h5>Ok , bas Xaled hate you 🥶</h5>');
+            $('#anjam').html('<h5>Ok , bas Xaled hate you 🥶</h5>');
+        }else if(varo == 'ee'){
+            time('<h5>Xaledish waki ta 25% hate you 😜</h5>');
+            $('#anjam').html('<h5>Xaledish waki ta 25% hate you 😜</h5>');
+        }else if(varo == 'eee'){
+            time('<h5>Xrab nya , Chonka 50% ya di ta kayf pe tet 🥶</h5>');
+            $('#anjam').html('<h5>Xrab nya , Chonka 50% ya di ta kayf pe tet 🥶</h5>');
+        }else if(varo == 'eeee'){
+            time('<h5>Ha basha mn 100% nakra d halbzhartna da nako da we legri 👽</h5>');
+            $('#anjam').html('<h5>Ha basha mn 100% nakra d halbzhartna da nako da we legri 👽</h5>');
+        }
+        $('.e').addClass('d-none');
+
+        setTimeout(()=>{
+            $('#text').html('Ye to hata ve qonaghe hati , ta bezarya xo lvi linki ditya ?');
+            $('.f').removeClass('d-none');
+            $('#anjam').html('');
+        },10500);
+    }
+
+    function axr(varo){
+        if(varo == 'f'){
+            $('#anjam').html('<h5>Tamam , de china brga domahike ,<br> Bas madam ta 7ash vi linki nakr de heya 3qoba krn , <br>(3qoba ta zhi dvet 60 chrka xo bgri pashi de brga domahye bini 😂) <br> <button class="btn btn-info m-2 hbd" onclick="hbd(60)">Brga Domahye 😉</button></h5>');
+        }else{
+            $('#anjam').html('<h5>Jana madam ta 7azhe kr de brga domahike nisha ta dam , <br> <button class="btn btn-info m-2 hbd" onclick="hbd(20)">Brga Domahye 😉</button></h5>');
+        }
+        $('.f').addClass('d-none');
+    }
+
+    function hbd(chrka){
+        $('#anjam').html('');
+        var sec = chrka;
+
+        var stop = setInterval(()=>{
+            if(sec == 0){
+                clearInterval(stop);
+                $('audio')[0].play();
+                $('#anjam,#text').remove();
+                $('#hbd,.cake').removeClass('d-none');
+                $('#middle').removeClass('bg-light shadow');
+                $('body').css('background-color','#000e28');
+            }
+            $('#text').html('<h1>'+sec+'</h1>');
+            --sec;
+        },1000);
+    }
+
+    function cake_a(){
+        $('#cake,.cake_b').removeClass('d-none');
+        $('#cake').attr('src','/assets/cake_a.png');
+    }
+    function cake_b(){
+        $('#cake').attr('src','/assets/cake_b.png');
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</html>
+
